@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | e-autopartstore</title>
+
+    <link rel="icon" href="/public/icon_images/Logo_2 - Copy.png" type="image/x-icon" sizes="32x32" >
+    <link rel="stylesheet" href="/css_folder/partial_styles/basics.css">
+    <style>
+        .login-container{
+            width: 40%;
+            height: 17rem;
+            border-radius: 15px;
+            background-color: rgb(111, 131, 131);
+            margin: 10rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2, #email, #pword{
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+            align-items: center;
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(68, 0, 255);
+            margin: 0 auto;
+            width: 5rem;
+            color: aliceblue;
+            font-size: medium;
+        }
+
+        button:hover {
+            background-color: aqua;
+            color: black;
+        }
+
+        input{
+            width: 250px;
+            height: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+  <main>
+
+    <div class="login-container">
+    <h2>Admin Login</h2>
+    
+    <form action="/admin-login" method="post">
+        <div id="email">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div id="pword">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+        <% if (message) { %>
+            <div class="error-message"><%= message %></div>
+        <% } %>
+    </div>
+  </main>
+
+</body>
+</html>

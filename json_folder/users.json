@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1726689711775",
+    "firstname": "Moses",
+    "lastname": "Alipoe",
+    "email": "alipoemoses646@gmail.com",
+    "bizname": "AMAZON CHAO",
+    "password": "$2b$10$VsDz.czO3eGClau7ku5q/.tiiS062Ad1KLTeYrPLTICc/mMCEMumm",
+    "isVerified": false,
+    "verificationToken": "07380809481c142226aa488b33da6755ecefc906"
+  },
+  {
+    "id": "1726689823152",
+    "firstname": "Moses",
+    "lastname": "Alipoe",
+    "email": "alipoemoses6461@gmail.com",
+    "bizname": "Ama",
+    "password": "$2b$10$l.LzZQjZOhs6PYfsbQn/N.gnXB9LlqRppE01Bc/q4PP5yPTvpljyS",
+    "isVerified": false,
+    "verificationToken": "0e88824d814934dcebcbca9209c67aaa24050f2e"
+  }
+]

@@ -1,0 +1,15 @@
+/* For WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Set to "auto" or "thin" */
+    scrollbar-color: #333 transparent; /* thumb color and track color */
+}

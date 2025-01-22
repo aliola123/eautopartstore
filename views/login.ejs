@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | e-autopartstore</title>
+    
+    <link rel="icon" href="/public/icon_images/Logo_2 - Copy.png" type="image/x-icon" sizes="32x32" >
+    <link rel="stylesheet" href="/css_folder/login_page.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+       crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <div class="top">
+      <div class="logo">
+        <a href="/landing">
+          <img src="/icon_images/Logo_2.png" alt="eas logo" width="250px" height="37px">
+        </a>
+      </div>
+      <a href="/landing" title="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="white;"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Sign in</h2>
+    <form action="/login" method="post">
+      <input type="text" placeholder="Email" name="email" id="email" required>
+      <div class="p-inp">
+        <input type="password" placeholder="Password" name="password" id="password" required>
+        <svg id="togglePassword" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#173660"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+      </div>
+      <div class="fgpw_lg">
+        <p><a href="/forgot-password" id="fgpw_lnk">Forgot Password?</a></p>
+        <button class="login" type="submit">Login</button>
+      </div>
+      
+          <!-- Flash Messages -->
+      <% if (messages.error) { %>
+          <% messages.error.forEach(function(msg) { %>
+            <div class="alert alert-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="m40-120 440-760 440 760H40Zm138-80h604L480-720 178-200Zm302-40q17 0 28.5-11.5T520-280q0-17-11.5-28.5T480-320q-17 0-28.5 11.5T440-280q0 17 11.5 28.5T480-240Zm-40-120h80v-200h-80v200Zm40-100Z"/></svg>
+                <%= msg %>
+            </div>
+          <% }); %>
+      <% } %>
+      <% if (messages.success) { %>
+                <div class="alert alert-success"><%= messages.success %></div>
+      <% } %>
+                  
+
+        <p class="register"> Don't have an account? 
+          <a href="/register">
+            Sign Up
+          </a>
+        </p>
+    </form>
+  </main>
+
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    let isPasswordVisible = false;
+
+    togglePassword.addEventListener('click', function() {
+        // Toggle the type attribute
+        if (isPasswordVisible) {
+            passwordInput.type = 'password';
+            togglePassword.innerHTML = '<path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>';
+        } else {
+            passwordInput.type = 'text';
+            togglePassword.innerHTML = '<path d="M713-229-629-313q48-11 91.5-33.5T830-500q-50-101-144.5-160.5T480-720q-46 0-88.5 10.5T320-674L228-764q-11-11-10.5-28.5T230-820q14-14 32-14.5t28 13.5l674 673q11 11 11.5 28.5T994-133q-14 14-31.5 14.5T932-134L713-229ZM132-646l72 72q-36 34-64.5 76.5T128-500q50 101 144.5 160.5T480-280q42 0 81-9.5t75-26.5l52 52q-51 27-107 41t-101 14q-146 0-266-81.5T40-500q29-73 73.5-132.5T132-646Zm531 275-90-90q11-4 22.5-6.5T480-480q45 0 76.5 31.5T588-500q0 13-2.5 24.5T663-371Z"/>';
+        }
+        // Toggle the password visibility state
+        isPasswordVisible = !isPasswordVisible;
+    });
+</script>
+</body>
+</html>

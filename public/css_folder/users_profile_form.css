@@ -1,0 +1,262 @@
+/* ||RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+img{
+    display: block;
+}
+
+:root{
+    --BG-COLOR:  rgb(192, 193, 202);
+    --LIGHT-BG-COLOR: rgba(28, 194, 194, 0.324);
+    --FCOLOR:  rgba(60, 70, 105);
+}
+/* ||CLOSE RESET */
+
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--LIGHT-BG-COLOR);
+    margin: 0;
+    padding: 0;
+    color: var(--FCOLOR);
+}
+
+/* ||HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a{
+    width: fit-content;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header a {
+    display: inline-block;
+}
+
+header img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+/* close header */
+
+/* MAIN */
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--BOXSHADOW);
+    max-width: 500px;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.up_img {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.up_img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--CCOLOR);
+    box-shadow: var(--BOXSHADOW);
+    margin-inline: auto;
+}
+
+.up_img input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid var(--LIGHT-BG-COLOR);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--FCOLOR);
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--LIGHT-BG-COLOR);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--BG-COLOR);
+    color: var(--FCOLOR);
+    box-shadow: var(--BOXSHADOW);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--CCOLOR);
+}
+
+#btnp {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#btn {
+    background-color: var(--FCOLOR);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: darken(var(--CCOLOR), 10%);
+}
+/* CLOSE MAIN */
+
+
+/* ||FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:  var(--FCOLOR);
+    position: relative;
+    bottom: 0;
+}
+
+.mainft{
+    color:  rgba(255, 255, 255, 0.781);
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:  2vw;
+    justify-content: space-between;
+}
+
+.socials{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.socials a{
+    color: rgba(255, 255, 255, 0.781);
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact a{
+    color: white;
+    text-decoration: none;
+}
+
+.ftft{
+    margin: 2vh 0;
+    color:  rgb(27, 151, 48);
+    text-align: center;
+}
+
+/* for new footer designs */
+
+.legal_pg{
+    color: var(--BG-COLOR);
+    text-decoration: none;
+}
+
+.socials a{
+    width: 100%;
+    text-align: center;
+}
+
+.about a:hover, .about a:active, .socials a:hover, .socials a:active{
+    font-weight: bolder;
+}
+
+.socials a:hover, .socials a:active{
+    transform: scale(1.1);
+}
+
+.contact a:hover, .contact a:active{
+    font-weight: bolder;
+}
+
+/* ||CLOSE FOOTER */
+@media screen and (max-width: 450px) {
+    .container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 565px){
+    .search input{
+        width: 90%;
+    }
+
+    .search button{
+        display: none
+    }
+}
+
+@media screen and (max-width: 655px){
+    .container input, .container select{
+        width: 90%
+    }
+
+    #btn{
+        min-width: 100px;
+    }
+}
